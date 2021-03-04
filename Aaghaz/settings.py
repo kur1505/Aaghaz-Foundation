@@ -28,7 +28,7 @@ SECRET_KEY = 'm0=8w(=hgr+8%x4y#i_(qj)p$31n^@h3#*9d--r+77yq^=lkwy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', config('SERVER', default='127.0.0.1'), 'aaghazfoundation.herokuapp.com']
 
 
 # Application definition
