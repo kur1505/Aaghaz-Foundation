@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -84,7 +85,7 @@ DATABASES = {
         'NAME': 'db.sqlite3',
     }
 }
-DATABASES['default'] = dj_database_url.parse('postgres://mughxasnjzeaxv:597c1bff3bb85d0666dab44eccf13b2e8815f1b9780cb9857c06a4905af335d9@ec2-3-95-85-91.compute-1.amazonaws.com:5432/dbkneajdd8rumf')
+DATABASES['default'] = dj_database_url.parse('postgres://ywinonlwwgrwxg:f5fd5d67241504b43a8c53e25b4ae037053cfdd104db61f891389f2739f45355@ec2-52-71-231-37.compute-1.amazonaws.com:5432/dqlt45mfl9qlh')
 print(DATABASES)
 
 # Password validation
