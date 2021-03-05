@@ -8,6 +8,11 @@ from django.forms.utils import ErrorList
 from django.http import HttpResponse
 from django.contrib import messages
 from .models import *
+# Import logging from Python's standard library
+import logging
+
+# Create a logger for this file
+logger = logging.getLogger(__file__)
 
 def login_view(request):
     # form = LoginForm(request.POST or None)
@@ -27,7 +32,7 @@ def login_view(request):
     #             msg = 'Invalid credentials'    
     #     else:
     #         msg = 'Error validating the form'    
-
+    logger.info("This logs an info message.")
     return render(request, "accounts/login.html")
 
 def register_user(request):

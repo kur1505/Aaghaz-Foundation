@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'db.sqlite3',
     }
 }
-DATABASES['default'] = dj_database_url.parse('postgres://ywinonlwwgrwxg:f5fd5d67241504b43a8c53e25b4ae037053cfdd104db61f891389f2739f45355@ec2-52-71-231-37.compute-1.amazonaws.com:5432/dqlt45mfl9qlh')
+DATABASES['default'] = dj_database_url.parse('postgres://cwlkzorfdkvbbw:7d05a68e4a39cd21e68d992d46de6a9d94729c1e14dfea82022ac159c3dc07ac@ec2-3-224-251-47.compute-1.amazonaws.com:5432/d2flpkcu30s64i')
 print(DATABASES)
 
 # Password validation

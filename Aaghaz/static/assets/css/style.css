@@ -2196,7 +2196,7 @@ p.text-muted {
 }
 .pcoded-navbar .pcoded-inner-navbar li > a {
   text-align: left;
-  padding: 7px 15px;
+  padding: 3px 15px;
   margin: 5px 0 0;
   display: block;
   border-radius: 0;
@@ -10622,8 +10622,12 @@ select, textarea{
 }
 
 .auto-bg-img {
-  background-image: url(../images/bg-images/bg-3.jpg);
+  background-image: url(../images/bg-images/colorful-16.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+}
+
+.text-dark {
+  color: #000!important;
 }
