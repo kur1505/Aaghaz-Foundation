@@ -10633,10 +10633,10 @@ select, textarea{
 }
 
 .auto-bg-img {
-  background-image: url(../images/bg-images/aaghaz-banner1.jpg);
+  background-image: url(../images/bg-images/bg-5.jpg);
   background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  /* background-attachment: fixed; */
+  background-position: right;
 }
 
 .text-dark {
