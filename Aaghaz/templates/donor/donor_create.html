@@ -1,0 +1,140 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Donor {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <form role="form" action="" method="POST">
+                    {% csrf_token %}
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Donor Details</h5>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Donor ID: </b></label>
+                                    <input type="text" class="form-control" id="donorID"
+                                        placeholder="Donor ID">
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>First Name </b></label>
+                                    <input type="text" class="form-control" id="donorFnameID"
+                                        placeholder="First Name">
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Last Name: </b></label>
+                                    <input type="text" class="form-control" id="donorLnameID"
+                                        placeholder="Last Name">
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Donor Type: </b></label>
+                                    <select class="form-control" id="donorTypeID" name="select2">
+                                        <option value="0" disabled selected hidden>---------</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Donation Amount: </b></label>
+                                    <input type="text" class="form-control" id="donorAmtID"
+                                        placeholder="Donation Amount">
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Donor Status: </b></label>
+                                    <input type="text" class="form-control" id="donorStatusID"
+                                        placeholder="Donor Status">
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Volunteer ID: </b></label>
+                                    <input type="text" class="form-control" id="donorVolntrID"
+                                        placeholder="Volunteer ID">
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Location: </b></label>
+                                    <input type="text" class="form-control" id="donorLocID"
+                                        placeholder="Location">
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Phone Number: </b></label>
+                                    <input type="text" class="form-control" id="donorPhnID"
+                                        placeholder="Phone Number">
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Email: </b></label>
+                                    <input type="email" class="form-control" id="donorEmailID"
+                                        placeholder="Email">
+                                </div>
+                                
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Country: </b></label>
+                                    <select class="form-control" id="donorCountrydropdownMenuButton" name="select2">
+                                        <option value="0" disabled selected hidden>---------</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>City: </b></label>
+                                    <select class="form-control" id="donorCitydropdownMenuButton" name="select2">
+                                        <option value="0" disabled selected hidden>---------</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Pincode: </b></label>
+                                    <input type="text" class="form-control" id="donorPinID"
+                                        placeholder="Pincode">
+                                </div>
+
+                                <div class="col-md-8 my-2">
+                                    <label for=""><b>Address: </b></label>
+                                    <input type="text" class="form-control" id="donorAddrsID"
+                                        placeholder="Address">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary my-3">Save</button>
+            </form>
+
+            <!-- [ Main Content ] end -->
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

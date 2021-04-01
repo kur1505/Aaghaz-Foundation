@@ -12,3 +12,39 @@ from .models import *
 def index(request):
 
     return render(request, "website/index.html")
+
+# <---------------------------------------- Donor Views ------------------------------------------------->
+def donor_list(request):
+
+    return render(request, "donor/donor_list.html")
+
+
+def donor_create(request):
+
+    return render(request, "donor/donor_create.html")
+
+
+
+# <---------------------------------------- Volunteer Views --------------------------------------------->
+def volunteers_list(request):
+
+    return render(request, "volunteer/volunteers_list.html")
+
+
+def volunteer_create(request):
+
+    return render(request, "volunteer/volunteer_create.html")
+    
+
+
+
+# <---------------------------------------- Beneficiary Views --------------------------------------------->
+def beneficiarys_list(request):
+
+    return render(request, "beneficiary/beneficiary_list.html")
+
+
+def beneficiary_create(request):
+
+    return render(request, "beneficiary/beneficiary_create.html")
+    
