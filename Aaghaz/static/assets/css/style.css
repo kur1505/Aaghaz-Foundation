@@ -6932,9 +6932,9 @@ pre[class*=language-]:after, pre[class*=language-]:before {
 }
 
 /* input group start */
-.input-group {
+/* .input-group {
   background: #f4f7fa;
-}
+} */
 .input-group .input-group-text {
   padding-left: 15px;
   padding-right: 15px;
@@ -10628,7 +10628,7 @@ select, textarea{
 }
 
 .dataTable thead tr{
-  background-color: #1ba1e2;
+  background-color: #2aba6e;
   color: whitesmoke;
 }
 

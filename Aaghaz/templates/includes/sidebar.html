@@ -20,17 +20,23 @@
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="fas fa-user-lock"></i></span><span class="pcoded-mtext">Admin Master</span></a>
                     <ul class="pcoded-submenu">
                         <div class="nav-item">
-                            <li class=""><a href="#" class=""><i class="fa fa-minus mr-2"></i>Country master
+                            <li class=""><a href="{% url 'volunteer_master' %}" class=""><i class="fa fa-minus mr-2"></i>Volunteer Master
                                 </a></li>
-                            <li class=""><a href="#" class=""><i class="fa fa-minus mr-2"></i>State master
+                            <li class=""><a href="{% url 'beneficiary_master' %}" class=""><i class="fa fa-minus mr-2"></i>Beneficiary Master
                                 </a></li>
-                            <li class=""><a href="#" class=""><i class="fa fa-minus mr-2"></i>City master
+                            <li class=""><a href="{% url 'donor_master' %}" class=""><i class="fa fa-minus mr-2"></i>Donor Master
                                 </a></li>
-                            <li class=""><a href="#" class=""><i class="fa fa-minus mr-2"></i>Grade master
+                            <li class=""><a href="{% url 'country_master' %}" class=""><i class="fa fa-minus mr-2"></i>Country Master
                                 </a></li>
-                            <li class=""><a href="#" class=""><i class="fa fa-minus mr-2"></i>Profession_master
+                            <li class=""><a href="{% url 'expense_master' %}" class=""><i class="fa fa-minus mr-2"></i>Expense Master
                                 </a></li>
-                            <li class=""><a href="#" class=""><i class="fa fa-minus mr-2"></i>School_Master
+                            <li class=""><a href="{% url 'income_master' %}" class=""><i class="fa fa-minus mr-2"></i>Income Master
+                                </a></li>
+                            <li class=""><a href="{% url 'grade_master' %}" class=""><i class="fa fa-minus mr-2"></i>Grade Master
+                                </a></li>
+                            <li class=""><a href="{% url 'profession_master' %}" class=""><i class="fa fa-minus mr-2"></i>Profession Master
+                                </a></li>
+                            <li class=""><a href="{% url 'zone_master' %}" class=""><i class="fa fa-minus mr-2"></i>Zone Master
                                 </a></li>
                         </div> 
                     </ul>

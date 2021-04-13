@@ -51,8 +51,12 @@
     <!-- Top Bar -->
     {% include 'includes/navigation.html' %}
 
+    
     <!-- SideBar -->
     {% include 'includes/sidebar.html' %}
+    
+    <!-- Scripts Bar -->
+    {% include 'includes/scripts.html' %}
 
     <div class="pcoded-main-container">
         <div class="pcoded-wrapper">
@@ -61,8 +65,6 @@
 
         </div>
     </div>
-
-    {% include 'includes/scripts.html' %}
 
     <!-- Specific Page JS goes HERE  -->
     {% block javascripts %}{% endblock javascripts %}

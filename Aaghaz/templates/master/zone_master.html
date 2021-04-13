@@ -1,0 +1,78 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Zone Type {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+
+                    <!-- [ basic-table ] start -->
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Zone</h5>
+                                <form class="col-md-6" action="" method="POST">
+                                    {% csrf_token %}
+                                    <div class="input-group mb-3 mt-4">
+                                        <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Zone Type</span>
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="data_type" id="txt_name" required>
+                                        <input type="hidden" id="hdn_PK" name="pk">
+                                        <button type="submit" class="btn btn-primary  ml-2">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-block table-border-style">
+                                <div class="table-responsive">
+                                    <table class="text-center table table-bordered" id="tbleCust">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">S. No.</th>
+                                                <th scope="col">Zone Type</th>
+                                                <th scope="col">Created</th>
+                                                <th scope="col">Update</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for use in query %}
+                                                <tr>
+                                                    <td>{{forloop.counter}}</td>
+                                                    <td>{{use.zone_name}}</td>
+                                                    <td>{{use.create_date}}</td>
+                                                    <td>
+                                                        <a class="label theme-bg text-white f-12 mr-1"
+                                                            href="#"><i
+                                                                class="fas fa-edit text-white" onclick="getdatafromdatatable(this,{{use.pk}});"></i></a>
+                                                        <a href="#"
+                                                            class="label bg-danger text-white f-12 mr-1"><i
+                                                                class="fa fa-trash text-white"
+                                                                aria-hidden="true"></i></a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ basic-table ] end -->
+                    <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

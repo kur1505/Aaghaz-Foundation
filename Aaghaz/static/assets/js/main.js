@@ -1,4 +1,4 @@
-
+var dttable;
 !(function($) {
   "use strict";
 
@@ -46,6 +46,7 @@
 
   // Activate smooth scroll on page load with hash links in the url
   $(document).ready(function() {
+     dttable=$('#tbleCust').DataTable();
     $('.carousel').carousel({
       interval: 3000
     })
@@ -291,4 +292,11 @@ function dateformat(inputDate) {
       // Months use 0 index.
       return date.getDate() + '-' +date.getMonth() + 1  + '-' + date.getFullYear();
   }
+}
+function getdatafromdatatable(element){
+  debugger;
+  var data_row = dttable.row($(element).closest('tr')).data();
+  $('#txt_name').val(data_row[1])
+  $('#hdn_PK').val(data_row[0])
+  console.log(data_row)
 }

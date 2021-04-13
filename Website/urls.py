@@ -8,7 +8,7 @@ urlpatterns = [
     path('donor_list', views.donor_list, name="donor_list"),
     path('donor_create', views.donor_create, name="donor_create"),
 
-    # <--------------------------------- Donor Urls --------------------------------------------------->
+    # <--------------------------------- Volunteer Urls --------------------------------------------------->
     path('volunteers_list', views.volunteers_list, name="volunteers_list"),
     path('volunteer_create', views.volunteer_create, name="volunteer_create"),
     path('donor_create', views.donor_create, name="donor_create"),

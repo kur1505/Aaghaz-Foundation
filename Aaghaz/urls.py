@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("Authenticate.urls")), # Auth routes - login / register
     path("", include("Website.urls")), # Website routes
+    path("master/", include("Master.urls")), # Master routes
 ]

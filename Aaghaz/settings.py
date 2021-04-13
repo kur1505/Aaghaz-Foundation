@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'import_export',
     'Authenticate',
     'Website',
+    'Master',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +87,7 @@ DATABASES = {
         'NAME': 'db.sqlite3',
     }
 }
-DATABASES['default'] = dj_database_url.parse('postgres://cwlkzorfdkvbbw:7d05a68e4a39cd21e68d992d46de6a9d94729c1e14dfea82022ac159c3dc07ac@ec2-3-224-251-47.compute-1.amazonaws.com:5432/d2flpkcu30s64i')
+# DATABASES['default'] = dj_database_url.parse('postgres://cwlkzorfdkvbbw:7d05a68e4a39cd21e68d992d46de6a9d94729c1e14dfea82022ac159c3dc07ac@ec2-3-224-251-47.compute-1.amazonaws.com:5432/d2flpkcu30s64i')
 print(DATABASES)
 
 # Password validation
@@ -110,13 +112,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-IN'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Calcutta'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
 
