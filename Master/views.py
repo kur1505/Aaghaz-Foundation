@@ -68,7 +68,7 @@ def country_master(request):
                 con.update(country_name=data_type)
                 print('Country is', con)
                 msg = 'Data is updated successfully'
-            context = {'msg': 'msg','success':True,'url':'/master/country_master/'}
+            context = {'msg': msg,'success':True,'url':'/master/country_master/'}
             html_template = loader.get_template('includes/alert.html')
             return HttpResponse(html_template.render(context, request))
         else:
