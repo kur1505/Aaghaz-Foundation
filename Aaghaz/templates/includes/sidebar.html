@@ -1,0 +1,94 @@
+<nav class="pcoded-navbar">
+    <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo d-block text-left">
+
+            <div class="logo scrollto mb-1">
+                <img src="/static/assets/img/Logo/logo1.png" alt="" class="img-fluid" style="height:46px;"><br><hr>
+            </div>
+            <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
+        </div>
+        <div class="navbar-content scroll-div mb-4">
+            <ul class="nav pcoded-inner-navbar mb-4">
+
+                <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project"
+                    class="nav-item {% if 'index' in segment %} active {% endif %}">
+                    <a href="{% url 'index' %}" class="nav-link "><span class="pcoded-micon"><i
+                                class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                </li>
+                <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds"
+                    class="nav-item pcoded-hasmenu">
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="fas fa-user-lock"></i></span><span class="pcoded-mtext">Admin Master</span></a>
+                    <ul class="pcoded-submenu">
+                        <div class="nav-item">
+                            <li class=""><a href="{% url 'volunteer_master' %}" class=""><i class="fa fa-minus mr-2"></i>Volunteer Master
+                                </a></li>
+                            <li class=""><a href="{% url 'beneficiary_master' %}" class=""><i class="fa fa-minus mr-2"></i>Beneficiary Master
+                                </a></li>
+                            <li class=""><a href="{% url 'donor_master' %}" class=""><i class="fa fa-minus mr-2"></i>Donor Master
+                                </a></li>
+                            <li class=""><a href="{% url 'country_master' %}" class=""><i class="fa fa-minus mr-2"></i>Country Master
+                                </a></li>
+                            <li class=""><a href="{% url 'expense_master' %}" class=""><i class="fa fa-minus mr-2"></i>Expense Master
+                                </a></li>
+                            <li class=""><a href="{% url 'income_master' %}" class=""><i class="fa fa-minus mr-2"></i>Income Master
+                                </a></li>
+                            <li class=""><a href="{% url 'grade_master' %}" class=""><i class="fa fa-minus mr-2"></i>Grade Master
+                                </a></li>
+                            <li class=""><a href="{% url 'profession_master' %}" class=""><i class="fa fa-minus mr-2"></i>Profession Master
+                                </a></li>
+                            <li class=""><a href="{% url 'zone_master' %}" class=""><i class="fa fa-minus mr-2"></i>Zone Master
+                                </a></li>
+                        </div> 
+                    </ul>
+                </li>
+                <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds"
+                    class="nav-item pcoded-hasmenu">
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="far fa-user"></i></span><span class="pcoded-mtext">Donor</span></a>
+                    <ul class="pcoded-submenu">
+                        <div class="nav-item">
+                            <li class=""><a href="{% url 'donor_list' %}" class=""><i class="fa fa-minus mr-2"></i>Donor List
+                                </a></li>
+                            <li class=""><a href="#" class=""><i class="fa fa-minus mr-2"></i>Approval Request
+                                </a></li>
+                        </div> 
+                    </ul>
+                </li>
+                <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds"
+                    class="nav-item pcoded-hasmenu">
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="fas fa-user-friends"></i></span><span class="pcoded-mtext">Volunteer</span></a>
+                    <ul class="pcoded-submenu">
+                        <div class="nav-item">
+                            <li class=""><a href="{% url 'volunteers_list' %}" class=""><i class="fa fa-minus mr-2"></i>Volunteer List
+                                </a></li>
+                            <li class=""><a href="#" class=""><i class="fa fa-minus mr-2"></i>Approval Request
+                                </a></li>
+                        </div> 
+                    </ul>
+                </li>
+                <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds"
+                    class="nav-item pcoded-hasmenu">
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="far fa-address-card"></i></i></span><span class="pcoded-mtext">Beneficiary</span></a>
+                    <ul class="pcoded-submenu">
+                        <div class="nav-item">
+                            <li class=""><a href="{% url 'beneficiarys_list' %}" class=""><i class="fa fa-minus mr-2"></i>Beneficiary List
+                                </a></li>
+                            <li class=""><a href="#" class=""><i class="fa fa-minus mr-2"></i>Approval Request
+                                </a></li>
+                        </div> 
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#" class=""><span class="pcoded-micon"><i class="fas fa-id-card-alt"></i></span><span class="pcoded-mtext">Admin List
+                                </span></a></li>
+                <li class="nav-item"><a href="#" class=""><span class="pcoded-micon"><i class="fas fa-pen-square"></i></span><span class="pcoded-mtext">Review Board list
+                                </span></a></li>
+                <li class="nav-item"><a href="#" class=""><span class="pcoded-micon"><i class="fas fa-archive"></i></span><span class="pcoded-mtext">Central Supervisor List 
+                                </span></a></li>
+                <li class="nav-item"><a href="#" class=""><span class="pcoded-micon"><i class="fas fa-hand-holding-usd"></i></span><span class="pcoded-mtext">Payment Approval Request 
+                                </span></a></li>
+                <li class="nav-item"><a href="#" class=""><span class="pcoded-micon"><i class="fas fa-coins"></i></span><span class="pcoded-mtext">Account & Finance 
+                                </span></a></li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,81 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Volunteer List {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+
+                    <!-- [ basic-table ] start -->
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Volunteers</h5>
+                                <a href="{% url 'volunteer_create' %}" role="button" style="float: right"><i
+                                        class="fa fa-plus-circle" aria-hidden="true"></i>Add Volunteer</a>
+                            </div>
+                            <div class="card-block table-border-style">
+                                <div class="table-responsive">
+                                    <table class="text-center table table-bordered" id="tbleCust">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">S. No.</th>
+                                                <th scope="col">Vol ID</th>
+                                                <th scope="col">Vol Name(FN LN)</th>
+                                                <th scope="col">Vol Type</th>
+                                                <th scope="col">Location</th>
+                                                <th scope="col">Central Supervispr</th>
+                                                <!-- <th scope="col">Router</th>
+                                                <th scope="col">Plan</th> -->
+                                                <th scope="col" data-priority="1">Update</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- {% for use in cust %}
+                                            <tr>
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{use.user.first_name}}</td>
+                                                <td>{{use.user.email}}</td>
+                                                <td>{{use.user.phone}}</td>
+                                                <td>{{use.STB_Number}}</td>
+                                                <td>{{use.NODE_Number}}</td>
+                                                <td>{{use.Router_Number}}</td>
+                                                <td>{{use.plan_number}}</td>
+                                                <td>
+                                                    <a class="label bg-info text-white f-12 mr-1"
+                                                        href="{% url 'viewCustomer' use.user.id %}" target="_blank"><i
+                                                            class="fas fa-eye text-white"></i></a>
+                                                    <a class="label theme-bg text-white f-12 mr-1"
+                                                        href="{% url 'updateCustomer' use.user.id %}"><i
+                                                            class="fas fa-edit text-white"></i></a>
+                                                    <a href="{% url 'deleteCustomer' use.user.id %}"
+                                                        class="label bg-danger text-white f-12 mr-1"><i
+                                                            class="fa fa-trash text-white" aria-hidden="true"></i></a>
+                                                </td>
+                                            </tr>
+                                            {% endfor %} -->
+                                        </tbody>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ basic-table ] end -->
+                    <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
