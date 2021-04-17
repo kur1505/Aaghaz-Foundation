@@ -29,7 +29,7 @@ SECRET_KEY = 'sf=ym9hg=9jngn5r$!xws%_99sjkt2$vf#b*=9fubxq45xx*8)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', config('SERVER', default='127.0.0.1'), 'aaghazfoundation.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', config('SERVER', default='127.0.0.1'), 'aaghazfoundation.herokuapp.com', 'aaghaz2.herokuapp.com']
 
 
 # Application definition
