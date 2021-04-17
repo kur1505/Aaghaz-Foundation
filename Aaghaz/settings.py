@@ -16,7 +16,7 @@ import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).parent
 CORE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -127,7 +127,7 @@ DATABASES = {
     }
 }
 # Added database
-# DATABASES['default'] = dj_database_url.parse('postgres://cwlkzorfdkvbbw:7d05a68e4a39cd21e68d992d46de6a9d94729c1e14dfea82022ac159c3dc07ac@ec2-3-224-251-47.compute-1.amazonaws.com:5432/d2flpkcu30s64i')
+DATABASES['default'] = dj_database_url.parse('postgres://cwlkzorfdkvbbw:7d05a68e4a39cd21e68d992d46de6a9d94729c1e14dfea82022ac159c3dc07ac@ec2-3-224-251-47.compute-1.amazonaws.com:5432/d2flpkcu30s64i')
 print(DATABASES)
 
 # Password validation
