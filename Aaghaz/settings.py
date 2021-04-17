@@ -7,7 +7,7 @@ import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).parent
-AAGHAZ_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CORE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -86,7 +86,7 @@ MIDDLEWARE = [
 # }
 
 ROOT_URLCONF = 'Aaghaz.urls'
-TEMPLATE_DIR = os.path.join(AAGHAZ_DIR, "Aaghaz/templates")  # ROOT dir for templates
+TEMPLATE_DIR = os.path.join(CORE_DIR, "Aaghaz/templates")  # ROOT dir for templates
 
 TEMPLATES = [
     {
@@ -156,12 +156,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(AAGHAZ_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(CORE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+
+# Media Files Settings
+MEDIA_ROOT = os.path.join(CORE_DIR, 'Aaghaz/static/images')
+MEDIA_URL = '/Aaghaz/static/images/'
+
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(AAGHAZ_DIR, 'Aaghaz/static'),
+    os.path.join(CORE_DIR, 'Aaghaz/static'),
 )
 
 # Custom User Model
