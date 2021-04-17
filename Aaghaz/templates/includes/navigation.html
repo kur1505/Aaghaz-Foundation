@@ -2,7 +2,7 @@
     <div class="m-header">
         <a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
         <a href="index.html" class="b-brand">
-           
+
             <img src="/static/assets/img/Logo/logo1.png" alt="" class="img-fluid" style="height:46px;">
         </a>
     </div>
@@ -10,7 +10,7 @@
         <i class="feather icon-more-horizontal"></i>
     </a>
     <div class="collapse navbar-collapse">
-        
+
         <ul class="navbar-nav mr-auto">
             <li><img src="/static/assets/img/Logo/logo1.png" alt="" class="img-fluid" style="height:46px;"></li>
             <li><a href="#!" class="full-screen" onclick="javascript:toggleFullScreen()"><i
@@ -92,29 +92,34 @@
                     </div>
                 </li> -->
             <!-- <li><a href="#!" class="displayChatbox"><i class="icon feather icon-mail"></i></a></li> -->
+          
             <li>
-                <div class="pro-head">
-                    <a href="#" title="Profile"><img src="/static/assets/images/user/avatar-1.jpg" class="img-radius" style="width: 36px;" alt="User-Profile-Image">
-                    <span>Test</span></a>
-                    <a href="#" class="dud-logout ml-1" title="Logout">
-                        <i class="feather icon-log-out"></i>
-                    </a>
+                <div class="dropdown drp-user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Profile"><img src="/static/assets/images/user/avatar-1.jpg" class="img-radius"
+                        style="width: 36px;" alt="User-Profile-Image">
+                    <span>{{request.user.first_name}} {{request.user.last_name}}</span></a>
+                    <div class="dropdown-menu dropdown-menu-right profile-notification">
+
+                        <ul class="pro-body">
+                            <li><a href="#!" class="dropdown-item"><i class="feather icon-mail"></i> {{request.user.email}}</a>
+                            </li>
+                            <!-- <li><a href="#!" class="dropdown-item"><i class="feather icon-settings"></i> Settings</a>
+                            </li>
+                            <li><a href="#!" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
+                            <li><a href="message.html" class="dropdown-item"><i class="feather icon-mail"></i> My
+                                    Messages</a>
+                            </li>
+                            <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock
+                                    Screen</a></li> -->
+                            <li><a href="{% url 'logout' %}" class="dropdown-item"><i class="feather icon-power"></i>Logout
+                            </a></li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- <div class="dropdown drp-user">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon feather icon-settings"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right profile-notification">
-                            
-                            <ul class="pro-body">
-                                <li><a href="#!" class="dropdown-item"><i class="feather icon-settings"></i> Settings</a></li>
-                                <li><a href="#!" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
-                                <li><a href="message.html" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li>
-                                <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
-                            </ul>
-                        </div>
-                    </div> -->
             </li>
         </ul>
+    </div>
+
+    </ul>
     </div>
 </header>

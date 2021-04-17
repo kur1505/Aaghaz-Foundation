@@ -57,6 +57,44 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# LOGGING = {
+#     'version': 1,
+#     # Version of logging
+#     'disable_existing_loggers': False,
+ 
+#     'filters':{
+#         #information regarding filters
+#     },
+ 
+#     'formatters':{
+#         'Simple_Format':{
+#             'format': '{levelname} {message}',
+#             'style': '{',
+#         }
+#     },
+ 
+#     'handlers': {
+#         'file': {
+#             'level': 'DEBUG',
+#             'class': 'logging.FileHandler',
+#             'filename': './logs/log_file1.log',
+#             'formatter': 'Simple_Format',
+#         },
+ 
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+ 
+#     'loggers': {
+#         'django': {
+#             'handlers': ['file', 'console'],
+#             'level': 'DEBUG',
+#         },
+#     },
+# }
+
 ROOT_URLCONF = 'Aaghaz.urls'
 TEMPLATE_DIR = os.path.join(CORE_DIR, "Aaghaz/templates")  # ROOT dir for templates
 

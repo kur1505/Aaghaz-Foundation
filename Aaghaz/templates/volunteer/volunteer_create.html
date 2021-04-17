@@ -17,53 +17,73 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h5>Volunteer Details</h5>
+                            <h5>Profile Details</h5>
                         </div>
 
                         <div class="card-body">
                             <div class="row">
-
-                                <div class="col-md-4 my-2">
-                                    <label for=""><b>Volunteer ID: </b></label>
-                                    <input type="text" class="form-control" id="volunteerID"
-                                        placeholder="Volunteer ID">
-                                </div>
-
+                                
                                 <div class="col-md-4 my-2">
                                     <label for=""><b>First Name </b></label>
-                                    <input type="text" class="form-control" id="volunteerFnameID"
-                                        placeholder="First Name">
+                                    {{ sform.first_name }}
                                 </div>
 
                                 <div class="col-md-4 my-2">
                                     <label for=""><b>Last Name: </b></label>
-                                    <input type="text" class="form-control" id="volunteerLnameID"
-                                        placeholder="Last Name">
+                                    {{ sform.last_name }}
                                 </div>
                                 
                                 <div class="col-md-4 my-2">
                                     <label for=""><b>Phone Number: </b></label>
-                                    <input type="text" class="form-control" id="volunteerPhnID"
-                                        placeholder="Phone Number">
+                                    {{ sform.phone }}
                                 </div>
 
                                 <div class="col-md-4 my-2">
                                     <label for=""><b>Email: </b></label>
-                                    <input type="email" class="form-control" id="volunteerEmailID"
-                                        placeholder="Email">
+                                    {{ sform.email }}
                                 </div>
 
                                 <div class="col-md-4 my-2">
-                                    <label for=""><b>Volunteer Type: </b></label>
-                                    <select class="form-control" id="volunteerTypeID" name="select2">
-                                        <option value="0" disabled selected hidden>---------</option>
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
-                                    </select>
+                                    <label for=""><b>Password: </b></label>
+                                    {{ sform.password1 }}
                                 </div>
 
                                 <div class="col-md-4 my-2">
+                                    <label for=""><b>Re-enter Password: </b></label>
+                                    {{ sform.password2 }}
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Date Of Birth: </b></label>
+                                    {{ sform.birth_date }}
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Gender: </b></label>
+                                    {{ sform.gender }}
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Address Line 1: </b></label>
+                                    {{ sform.addressline1 }}
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Address Line 2 (Optional): </b></label>
+                                    {{ sform.addressline2 }}
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>City: </b></label>
+                                    {{ sform.city }}
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Pincode: </b></label>
+                                    {{ sform.pincode }}
+                                </div>
+
+                                {% comment %} <div class="col-md-4 my-2">
                                     <label for=""><b>Central Volunteer ID: </b></label>
                                     <input type="text" class="form-control" id="volunteerCVID"
                                         placeholder="Donation Amount">
@@ -111,16 +131,63 @@
                                     <label for=""><b>Address: </b></label>
                                     <input type="text" class="form-control" id="volunteerAddrsID"
                                         placeholder="Address">
+                                </div> {% endcomment %}
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                        <div class="card-header">
+                            <h5>Personal Details</h5>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Highest Education </b></label>
+                                    {{ form.highest_eduction }}
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Educational Institution </b></label>
+                                    {{ form.educational_institution }}
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>LinkedIn Profile Url </b></label>
+                                    {{ form.linkedIn_profile }}
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Facebook Profile Url </b></label>
+                                    {{ form.facebook_profile }}
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Aadhar Card </b></label>
+                                    {{ form.aadhar_card }}
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Current Occupation </b></label>
+                                    {{ form.current_occupation }}
+                                </div>
+
+                                <div class="col-md-4 my-2">
+                                    <label for=""><b>Office Address </b></label>
+                                    {{ form.office_address }}
                                 </div>
 
                             </div>
                         </div>
                     </div>
+                    <button type="submit" class="btn btn-primary my-3 col-md-4">Save</button>
+                </form>
             </div>
 
 
-            <button type="submit" class="btn btn-primary my-3">Save</button>
-            </form>
+            
 
             <!-- [ Main Content ] end -->
         </div>
@@ -131,4 +198,59 @@
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
-{% block javascripts %}{% endblock javascripts %}
+{% block javascripts %}
+
+<script>
+    $(function () {
+        try {
+            console.log(dateformat());
+            $('.js-datepicker').daterangepicker({
+                "singleDatePicker": true,
+                "showDropdowns": true,
+                "autoUpdateInput": false,
+                // "maxDate": dateformat(),
+                locale: {
+                    format: 'YYYY-MM-DD'
+                },
+            });
+
+            var myCalendar = $('.js-datepicker');
+            var isClick = 0;
+
+            $(window).on('click', function () {
+                isClick = 0;
+            });
+
+            $(myCalendar).on('apply.daterangepicker', function (ev, picker) {
+                isClick = 0;
+                $(this).val(picker.startDate.format('YYYY-MM-DD'));
+
+            });
+
+            $('.js-btn-calendar').on('click', function (e) {
+                e.stopPropagation();
+
+                if (isClick === 1) isClick = 0;
+                else if (isClick === 0) isClick = 1;
+
+                if (isClick === 1) {
+                    myCalendar.focus();
+                }
+            });
+
+            $(myCalendar).on('click', function (e) {
+                e.stopPropagation();
+                isClick = 1;
+            });
+
+            $('.daterangepicker').on('click', function (e) {
+                e.stopPropagation();
+            });
+
+
+        } catch (er) { console.log(er); }
+    });
+    
+</script>
+
+{% endblock javascripts %}

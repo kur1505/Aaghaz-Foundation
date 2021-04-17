@@ -74,11 +74,13 @@
 
         <script>
             $(document).ready(function () {
+               
                 $('.nav li').each(function (index) {
+                    // debugger;
                     $(this).removeClass('active');
 
                     var url = window.location.href.split('/')
-                    var url = url[url.length - 1]
+                    var url = url[url.length - 2]
                     var str = $(this).find("a").attr('href');
                     if (str.indexOf(url) > -1) {
                         $(this).addClass('active');

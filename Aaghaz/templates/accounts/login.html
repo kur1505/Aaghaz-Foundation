@@ -21,21 +21,41 @@
                     <i class="feather icon-unlock auth-icon"></i>
                 </div>
                 <h3 class="mb-4">Login</h3>
-                <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="input-group mb-4">
-                    <input type="password" class="form-control" placeholder="password">
-                </div>
-                <div class="form-group text-left">
-                    <div class="checkbox checkbox-fill d-inline">
-                        <input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-a1" checked="">
-                        <label for="checkbox-fill-a1" class="cr"> Save credentials</label>
-                    </div>
-                </div>
-                <a class="btn btn-primary shadow-2 mb-4" href="{% url 'index' %}">Login</a>
+                <span>
+                    {% if msg %}
+                        <span class="mb-0 text-danger">
+                             {{ msg | safe }}
+                    {% else %}
+                        <span class="mb-0 text-muted">
+                            Add your credentials
+                    {% endif %} 
+                </span>
 
-                <p class="mb-2 text-muted">Forgot password? <a href="{% url 'reset' %}">Reset</a></p>
+                <br />
+                <br />
+
+                <form role="form" method="post" action="">
+
+                    {% csrf_token %}                   
+
+                    <div class="input-group mb-3">
+                        {{ form.email }}
+                    </div>
+                    
+                    <div class="input-group mb-4">
+                        {{ form.password }}
+                    </div>
+                    
+                    <!-- <div class="form-group text-left">
+                        <div class="checkbox checkbox-fill d-inline">
+                            <input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-a1" checked="">
+                            <label for="checkbox-fill-a1" class="cr"> Save Details</label>
+                        </div>
+                    </div> -->
+                    <button type="submit" name="login" class="btn btn-primary shadow-2 mb-4">Login</button>
+
+                </form>
+                <p class="mb-2 text-muted">Forgot password? <a href="#">Reset</a></p>
                 <p class="mb-0 text-muted">Don’t have an account? <a href="{% url 'register' %}">Signup</a></p>
             </div>
         </div>

@@ -14,8 +14,8 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from import_export.admin import ImportExportModelAdmin
 # from .forms import UserAdminCreationForm, UserAdminChangeForm
 
-# from .models import PhoneOTP
-# admin.site.register(PhoneOTP)
+from .models import AaghazErrors, Volunteer
+
 
 
 class CustomUserAdmin(BaseUserAdmin):
@@ -23,12 +23,12 @@ class CustomUserAdmin(BaseUserAdmin):
     add_form = SignUpForm
     # form = CustomUserChangeForm
     model = User
-    list_display = ('first_name','email','phone', 'is_staff', 'is_active','user_creation_date',)
-    list_filter = ('first_name','email','phone','is_staff', 'is_active','user_creation_date',)
+    list_display = ('email','first_name', 'last_name','phone', 'is_staff', 'is_active','user_creation_date',)
+    list_filter = ('email','first_name', 'last_name','phone','is_staff', 'is_active','user_creation_date',)
     fieldsets = (
-        (None, {'fields': ('email', 'password', 'phone')}),
+        (None, {'fields': ('first_name', 'last_name', 'email', 'password', 'phone')}),
         ('Permissions', {'fields': ('is_staff', 'is_active')}),
-        ('Address', {'fields': ('addressline1', 'addressline2', 'city', 'pincode')}),
+        ('Address', {'fields': ('addressline1', 'addressline2', 'country', 'city', 'pincode')}),
     )
     add_fieldsets = (
         (None, {
@@ -47,3 +47,12 @@ class CustomUserAdmin(BaseUserAdmin):
 
 
 admin.site.register(User, CustomUserAdmin)
+admin.site.register(Volunteer)
+
+@admin.register(AaghazErrors)
+class AaghazErrorsAdmin(admin.ModelAdmin):
+    list_display = ('functionName','msg','timeStamp',)
+
+# @admin.register(Volunteer)
+# class ViewAdmin(ImportExportModelAdmin):
+#     pass

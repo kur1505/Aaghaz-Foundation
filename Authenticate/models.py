@@ -11,7 +11,7 @@ from django.dispatch import receiver
 from django.db.models.signals import post_save
 from django.utils import timezone
 from datetime import datetime, date
-
+from Master.models import *
 
 import random
 
@@ -30,7 +30,7 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
-    def create_superuser(self, phone, password, **extra_fields):
+    def create_superuser(self, email, password, **extra_fields):
         """
         Create and save a SuperUser with the given email and password.
         """
@@ -43,7 +43,7 @@ class UserManager(BaseUserManager):
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('Superuser must have is_superuser=True.')
 
-        return self.create_user(phone, password, **extra_fields)
+        return self.create_user(email, password, **extra_fields)
 
 gender_choices=(
     ("0","Male"),
@@ -61,6 +61,7 @@ class User(AbstractUser):
     gender = models.CharField(_('Gender'), choices=gender_choices, max_length=50, null=True)
     addressline1 = models.CharField(max_length=50, null=True)
     addressline2 = models.CharField(max_length=50, null=True, blank=True)
+    country = models.OneToOneField(CountryMaster, null=True, on_delete=models.PROTECT, related_name='CountryMaster_model', blank=True)
     city = models.CharField(_("City"), max_length=50, null=True)
     pincode = models.CharField(_("Pincode"),max_length=6, null=True)
     user_creation_date= models.DateTimeField(_("Date & Time"),default=timezone.now)
@@ -72,4 +73,33 @@ class User(AbstractUser):
     objects = UserManager()
 
     def __str__(self):
-        return self.phone
+        return f'{self.phone}' or ''
+
+class AaghazErrors(models.Model):
+    functionName = models.CharField(max_length=100, blank=True, null=True)
+    msg = models.TextField(max_length=10000, blank=True, null=True)
+    timeStamp = models.DateTimeField(_("Date & Time"), default=timezone.now)
+    
+
+    def __str__(self):
+        return f'{self.functionName} + {self.msg}' or ''
+
+class Volunteer(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, related_name='Vol_model')
+    vol_ID = models.CharField(_("Volunteer ID"), null=True, max_length=100, unique=True, blank=True)
+    vol_type = models.OneToOneField(VolunteerMaster, null=True, on_delete=models.PROTECT, related_name='VolType_model', blank=True)
+    highest_eduction = models.CharField(max_length=100, blank=True, null=True)
+    educational_institution = models.CharField(max_length=100, blank=True, null=True)
+    linkedIn_profile = models.CharField(max_length=100, blank=True, null=True)
+    facebook_profile = models.CharField(max_length=100, blank=True, null=True)
+    aadhar_card = models.PositiveIntegerField(_("Adhaar Card"), blank=True, null=True)
+    current_occupation = models.CharField(max_length=100, blank=True, null=True)
+    office_address = models.CharField(max_length=100, blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.user}' or ''
+
+@receiver(pre_save, sender=Volunteer)
+def pre_save_vol_ID(sender, instance, *args, **kwargs):
+    if instance.vol_ID is None or instance.vol_ID == "":
+        instance.vol_ID = generate_ref_code(7).upper()

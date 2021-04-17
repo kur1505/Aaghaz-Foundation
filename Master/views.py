@@ -8,6 +8,7 @@ from django.template import loader
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.contrib import messages
 from .models import *
+from Authenticate.models import *
 # Import logging from Python's standard library
 import logging
 # Create a logger for this file
@@ -16,6 +17,8 @@ logger = logging.getLogger(__file__)
 # Create your views here.
 @csrf_protect
 def volunteer_master(request):
+    # usr = request.User
+    # print('User is ', usr)
     query = VolunteerMaster.objects.all()
     msg = None
     try:
@@ -44,6 +47,8 @@ def volunteer_master(request):
             print('Error')
     except Exception as e:
         print(e)
+        AErrors = AaghazErrors.objects.create(functionName=volunteer_master, msg=e)
+        print('Exceptions are ',AErrors)
 
     context = {'query': query }
     logger.info("This logs an info message.")
@@ -80,6 +85,8 @@ def country_master(request):
             print('Error')
     except Exception as e:
         print(e)
+        AErrors = AaghazErrors.objects.create(functionName=country_master, msg=e)
+        print('Exceptions are ',AErrors)
 
     context = {'query': query }
     logger.info("This logs an info message.")
@@ -116,6 +123,9 @@ def beneficiary_master(request):
             print('Error')
     except Exception as e:
         print(e)
+        AErrors = AaghazErrors.objects.create(functionName=beneficiary_master, msg=e)
+        print('Exceptions are ',AErrors)
+
 
     context = {'query': query }
     logger.info("This logs an info message.")
@@ -152,6 +162,9 @@ def donor_master(request):
             print('Error')
     except Exception as e:
         print(e)
+        AErrors = AaghazErrors.objects.create(functionName=donor_master, msg=e)
+        print('Exceptions are ',AErrors)
+
 
     context = {'query': query }
     logger.info("This logs an info message.")
@@ -188,6 +201,9 @@ def expense_master(request):
             print('Error')
     except Exception as e:
         print(e)
+        AErrors = AaghazErrors.objects.create(functionName=expense_master, msg=e)
+        print('Exceptions are ',AErrors)
+
 
     context = {'query': query }
     logger.info("This logs an info message.")
@@ -223,6 +239,9 @@ def grade_master(request):
             print('Error')
     except Exception as e:
         print(e)
+        AErrors = AaghazErrors.objects.create(functionName=grade_master, msg=e)
+        print('Exceptions are ',AErrors)
+
 
     context = {'query': query }
     logger.info("This logs an info message.")
@@ -259,6 +278,10 @@ def income_master(request):
             print('Error')
     except Exception as e:
         print(e)
+        AErrors = AaghazErrors.objects.create(functionName=income_master
+        , msg=e)
+        print('Exceptions are ',AErrors)
+
 
     context = {'query': query }
     logger.info("This logs an info message.")
@@ -295,6 +318,9 @@ def profession_master(request):
             print('Error')
     except Exception as e:
         print(e)
+        AErrors = AaghazErrors.objects.create(functionName=profession_master, msg=e)
+        print('Exceptions are ',AErrors)
+
 
     context = {'query': query }
     logger.info("This logs an info message.")
@@ -331,6 +357,9 @@ def zone_master(request):
             print('Error')
     except Exception as e:
         print(e)
+        AErrors = AaghazErrors.objects.create(functionName=zone_master, msg=e)
+        print('Exceptions are ',AErrors)
+
 
     context = {'query': query }
     logger.info("This logs an info message.")
