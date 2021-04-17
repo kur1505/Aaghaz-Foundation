@@ -13,7 +13,7 @@ import os
 from decouple import config
 from unipath import Path
 import dj_database_url
-from pathlib import Path
+# from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).parent
@@ -123,7 +123,7 @@ WSGI_APPLICATION = 'Aaghaz.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
 # Added database
